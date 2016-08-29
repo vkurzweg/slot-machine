@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Cinzel|Cormorant+SC|Great+Vibes|Varela+Round" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="js/main.js"></script>
 </head>
 <body>
 
@@ -15,7 +14,7 @@
 
   <h1>Slot Machine</h1>
 
-  <audio src="SlotAudio.WAV"></audio>
+ <!--  <audio src="../audio/SlotAudio.WAV"></audio> -->
 
   <article id="display-payout">
     <h2 class="headings">Payout</h2>
@@ -31,9 +30,15 @@
 
 <main>
 
-  <section id="reel1" class="reels"></section>
-  <section id="reel2" class="reels"></section>
-  <section id="reel3" class="reels"></section>
+  <section id="reel1" class="reels">
+    <img id="reelImage0">
+  </section>
+  <section id="reel2" class="reels">
+    <img id="reelImage1">
+  </section>
+  <section id="reel3" class="reels">
+    <img id="reelImage2">
+  </section>
 
   <button id="bet1" class="buttons">Bet 1</button>
   <button id="bet2" class="buttons">Bet 2</button>
@@ -41,5 +46,7 @@
 
 </main>
 
+  <!-- <script src="js/symbols.js"></script> -->
+  <script src="js/main.js"></script>
 </body>
 </html>
