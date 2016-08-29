@@ -1,0 +1,114 @@
+body {
+  font-family: 'Cormorant SC', serif;
+  background: url("images/slot_machine.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: -125px;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 34px;
+  position: relative;
+  top: 150px;
+  left: 75px;
+  visibility: hidden;
+}
+
+main {
+  height: 400px;
+}
+
+#display-payout {
+  width: 200px;
+  height: 100px;
+  position: relative;
+  left: 155px;
+  top: 275px;
+  margin-right: 15px;
+}
+
+#display-bank {
+  width: 200px;
+  height: 100px;
+  position: relative;
+  left: 820px;
+  top: 150px;
+  margin-left: 10px;
+}
+
+.headings {
+  font-family: 'Great Vibes', cursive;
+  font-size: 38px;
+  text-align: center;
+  position: relative;
+  bottom: 10px;
+}
+
+nav {
+  position: relative;
+  top: 100px;
+}
+
+.counters {
+  text-align: center;
+  position: relative;
+  font-size: 36px;
+  font-weight: bold;
+  bottom: 25px;
+}
+
+#payout {
+  color: #3C8446;
+  position: relative;
+  bottom: 40px;
+}
+
+.reels {
+  width: 100px;
+  height: 200px;
+  float: left;
+  position: relative;
+  bottom: 100px;
+  left: 350px;
+  top: 30px;
+  margin: 0 5px;
+  padding: 15px;
+  align-content: center;
+  opacity: 0.9;
+}
+
+
+.buttons {
+  font-family: 'Cormorant SC', serif;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  height: 70px;
+  border-radius: 15px;
+  background: black;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  width: 135px;
+  box-shadow: 1px 1px 1px grey;
+}
+
+.buttons:hover {
+  height: 75px;
+}
+
+#bet3 {
+  top: 285px;
+  right: 50px;
+  }
+
+#bet2 {
+  top: 285px;
+  right: 54px;
+}
+
+#bet1 {
+  top: 285px;
+  right: 60px;
+}
