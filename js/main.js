@@ -15,43 +15,43 @@ var symbols = [
   }, {
     name: 'Cherry',
     image: 'images/cherry.png',
-    pays: 90
+    pays: 50
   }, {
     name: 'Chart',
     image: 'images/chart-upward-trend.png',
-    pays: 80
+    pays: 40
   }, {
     name: 'Pineapple',
     image: 'images/pineapple.png',
-    pays: 70
+    pays: 30
   }, {
     name: 'Diamond',
     image: 'images/diamond-with-dot.png',
-    pays: 60
+    pays: 25
   }, {
     name: 'Crab',
     image: 'images/crab.png',
-    pays: 50
+    pays: 20
   }, {
     name: 'Sunrise',
     image: 'images/sunrise.png',
-    pays: 40
+    pays: 15
   }, {
     name: 'Wave',
     image: 'images/water-wave.png',
-    pays: 30
+    pays: 9
   }, {
     name: 'Balloon',
     image: 'images/balloon.png',
-    pays: 20
+    pays: 6
   }, {
     name: 'Wavy',
     image: 'images/wavy-dash.png',
-    pays: 10
+    pays: 3
   }
 ];
 
-var distribution = [0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5,5,6,6,6,6,6,6,6,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,9,9];
+var distribution = [0,0,0,1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,6,6,6,6,6,6,6,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,9];
 
 function countSymbols() {
   symbolCounts = {};

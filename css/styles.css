@@ -62,7 +62,28 @@ nav {
 #payout {
   color: #3C8446;
   position: relative;
-  bottom: 40px;
+  bottom: 130px;
+}
+
+#dollar-pay {
+  font-size: 42px;
+  position: relative;
+  bottom: 38px;
+  left: 45px;
+}
+
+#bank {
+  color: #3C8446;
+  position: relative;
+  left: 5px;
+  bottom: 130px;
+}
+
+#dollar-bank {
+  position: relative;
+  left: 50px;
+  bottom: 38px;
+  font-size: 42px;
 }
 
 .reels {
