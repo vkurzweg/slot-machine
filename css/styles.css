@@ -85,7 +85,7 @@ h1 {
 main {
   width: 700px;
   height: 359px;
-  background: url("../images/slot_machine.jpg");
+  background: url("../images/slot_machine2.jpg");
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
@@ -101,7 +101,6 @@ main {
   padding: 15px;
   opacity: 0.9;
   padding-top: 65px;
-
 }
 
 #reel1 {
@@ -142,6 +141,7 @@ main {
 
 .buttons:hover {
   height: 75px;
+  background: #3C8446;
 }
 
 #bet3 {

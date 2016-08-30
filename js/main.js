@@ -51,8 +51,9 @@ var symbols = [
   }
 ];
 
-var distribution = [0,0,0,1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,6,6,6,6,6,6,6,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,9];
+var distribution = [0,0,0,1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,6,6,6,6,6,6,6,6,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,9];
 
+//CHECK FOR MATCHING SYMBOLS
 function countSymbols() {
   symbolCounts = {};
   payline.forEach(function(symbol) {
@@ -66,6 +67,7 @@ function countSymbols() {
   });
 }
 
+//COMPUTE PAYOUT
 function computePayout() {
 
   // loop thru the symbolCounts object
@@ -85,18 +87,45 @@ function computePayout() {
   console.log(bank,payout,symbolCounts);
 }
 
-function render() {
-  // loop thru each reel value in payline array
-  for (var i = 0; i < payline.length; i++) {
-    // update the src property of <img id="reelImage0"...
-    $('#reelImage' + i).attr('src', symbols[payline[i]].image);
-  }
-  $('#payout').html(payout);
-  $('#bank').html(bank);
+//VIEW
+
+var intervalId
+var intervalId2
+var intervalId3
+
+function spin(){
+  intervalId =  setInterval(function(){
+      $('#reelImage0').attr('src', symbols[distribution[Math.floor(Math.random() * distribution.length)]].image);
+    },100);
+  intervalId2 =  setInterval(function(){
+      $('#reelImage1').attr('src', symbols[distribution[Math.floor(Math.random() * distribution.length)]].image);
+    },100);
+  intervalId3 =  setInterval(function(){
+      $('#reelImage2').attr('src', symbols[distribution[Math.floor(Math.random() * distribution.length)]].image);
+    },100);
 }
 
+function render() {
+  setTimeout(function(){
+    clearInterval(intervalId);
+    $('#reelImage0').attr('src', symbols[payline[0]].image);
+  }, 1000);
+  setTimeout(function(){
+    clearInterval(intervalId2);
+    $('#reelImage1').attr('src', symbols[payline[1]].image);
+  }, 2000);
+  setTimeout(function(){
+    clearInterval(intervalId3);
+    $('#reelImage2').attr('src', symbols[payline[2]].image);
+  }, 3000);
+  setTimeout(function(){
+    $('#payout').html(payout);
+    $('#bank').html(bank);
+  },3000);
+};
 
 
+//CONTROLLER
 $('.buttons').on('click', function(){
     // generate symbols
   for (var i = 0; i < payline.length; i++) {
@@ -119,6 +148,7 @@ $('.buttons').on('click', function(){
       computePayout() * 3;
       break;
   };
+  spin();
   render();
 })
 
