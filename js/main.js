@@ -19,35 +19,35 @@ var symbols = [
   }, {
     name: 'Chart',
     image: 'images/chart-upward-trend.png',
-    pays: 40
+    pays: 30
   }, {
     name: 'Pineapple',
     image: 'images/pineapple.png',
-    pays: 30
+    pays: 20
   }, {
     name: 'Diamond',
     image: 'images/diamond-with-dot.png',
-    pays: 25
+    pays: 15
   }, {
     name: 'Crab',
     image: 'images/crab.png',
-    pays: 20
+    pays: 10
   }, {
     name: 'Sunrise',
     image: 'images/sunrise.png',
-    pays: 15
+    pays: 8
   }, {
     name: 'Wave',
     image: 'images/water-wave.png',
-    pays: 9
+    pays: 6
   }, {
     name: 'Balloon',
     image: 'images/balloon.png',
-    pays: 6
+    pays: 4
   }, {
     name: 'Wavy',
     image: 'images/wavy-dash.png',
-    pays: 3
+    pays: 2
   }
 ];
 
