@@ -1,10 +1,6 @@
 body {
   font-family: 'Cormorant SC', serif;
   position: relative;
-  background: url("../images/slot_machine.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-top: -125px;
 }
 
 h1 {
@@ -16,104 +12,132 @@ h1 {
   visibility: hidden;
 }
 
-main {
-  height: 400px;
-}
-
 #display-payout {
   width: 200px;
   height: 100px;
-  position: relative;
-  left: 155px;
-  top: 275px;
-  margin-right: 15px;
+  position: absolute;
+  z-index: 2;
+  margin-left: 900px;
+  margin-top: 60px;
 }
 
 #display-bank {
   width: 200px;
   height: 100px;
-  position: relative;
-  left: 820px;
-  top: 150px;
-  margin-left: 10px;
+  position: absolute;
+  z-index: 2;
+  margin-left: 900px;
+  margin-top: 190px;
 }
 
 .headings {
   font-family: 'Great Vibes', cursive;
   font-size: 38px;
   text-align: center;
-  position: relative;
-  bottom: 10px;
-}
+  position: absolute;
 
-nav {
-  position: relative;
-  top: 100px;
 }
 
 .counters {
   text-align: center;
-  position: relative;
+  position: absolute;
   font-size: 36px;
   font-weight: bold;
-  bottom: 25px;
+
 }
 
 #payout {
   color: #3C8446;
-  position: relative;
-  bottom: 130px;
+  position: absolute;
+  margin-left: 40px;
+  margin-top: 90px;
+
 }
 
 #dollar-pay {
-  font-size: 42px;
-  position: relative;
-  bottom: 38px;
-  left: 45px;
+  font-size: 46px;
+  position: absolute;
+  margin-top: 82px;
+  margin-left: 15px;
+
 }
 
 #bank {
   color: #3C8446;
-  position: relative;
-  left: 5px;
-  bottom: 130px;
+  position: absolute;
+  margin-top: 90px;
+  margin-left: 40px;
 }
 
 #dollar-bank {
-  position: relative;
-  left: 50px;
-  bottom: 38px;
-  font-size: 42px;
+  font-size: 46px;
+  position: absolute;
+  margin-top: 82px;
+  margin-left: 15px;
+}
+
+#container {
+  width: 700px;
+  height: 359px;
+  margin: 300px auto auto auto;
+}
+
+main {
+  width: 700px;
+  height: 359px;
+  background: url("../images/slot_machine.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  margin: -300px auto 0px auto;
+  z-index: -1;
 }
 
 .reels {
   width: 100px;
   height: 200px;
-  float: left;
-  position: relative;
-  bottom: 100px;
-  left: 347px;
-  top: 30px;
-  margin: 0 5px;
+  position: absolute;
+  margin: 48px 20px 40px 20px;
   padding: 15px;
-  align-content: center;
   opacity: 0.9;
+  padding-top: 65px;
+
 }
 
+#reel1 {
+  margin-left: 95px;
+}
+
+#reel2 {
+  margin-left: 236px;
+}
+
+#reel3 {
+  margin-left: 375px;
+}
+
+#place-bet {
+  font-family: 'Great Vibes', cursive;
+  font-size: 30px;
+  margin-top: -290px;
+  margin-left: 520px;
+  display: inline;
+  position: absolute;
+}
 
 .buttons {
   font-family: 'Cormorant SC', serif;
   text-transform: uppercase;
   display: inline-block;
-  position: relative;
-  height: 70px;
-  border-radius: 15px;
+  position: absolute;
   background: black;
   color: white;
   font-size: 22px;
   font-weight: bold;
-  width: 200px;
+  height: 70px;
+  width: 100px;
   box-shadow: 1px 1px 1px grey;
+  margin-left: 400px;
 }
 
 .buttons:hover {
@@ -121,16 +145,16 @@ nav {
 }
 
 #bet3 {
-  top: 285px;
-  right: 150px;
+  margin-top: -245px;
+  margin-left: 640px;
   }
 
 #bet2 {
-  top: 285px;
-  right: 154px;
+  margin-top: -245px;
+  margin-left: 535px;
 }
 
 #bet1 {
-  top: 285px;
-  right: 160px;
+  margin-top: -245px;
+  margin-left: 430px;
 }
