@@ -5,6 +5,7 @@ var payline = [null, null, null];
 var bank = 20;
 var payout = null;
 var bet = null;
+var betAmt;
 var symbolCounts = {};
 
 var symbols = [
@@ -51,7 +52,7 @@ var symbols = [
   }
 ];
 
-var distribution = [0,0,0,1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,6,6,6,6,6,6,6,6,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,9];
+var distribution = [0,0,0,1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,6,6,6,6,6,6,6,6,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9];
 
 //CHECK FOR MATCHING SYMBOLS
 function countSymbols() {
@@ -69,15 +70,15 @@ function countSymbols() {
 
 //COMPUTE PAYOUT
 function computePayout() {
-
   // loop thru the symbolCounts object
   var keys = Object.keys(symbolCounts);
   for (var i=0; i < keys.length; i++) {
     if (symbolCounts[keys[i]] === 2) {
-      payout = symbols[keys[i]].pays;
+      payout = symbols[keys[i]].pays * betAmt;
       break;
     } else if (symbolCounts[keys[i]] === 3) {
-      payout = 10 * symbols[keys[i]].pays;
+      payout = 10 * symbols[keys[i]].pays * betAmt;
+      renderWin();
       break;
     } else {
       payout = 0;
@@ -92,6 +93,7 @@ function computePayout() {
 var intervalId
 var intervalId2
 var intervalId3
+var intervalId4
 
 function spin(){
   intervalId =  setInterval(function(){
@@ -124,8 +126,14 @@ function render() {
   },3000);
 };
 
+function renderWin(){
+  setTimeout(function(){
+    $('img').addClass('rotate');
+  },3000)
+}
+
 function renderLose(){
-    setTimeout(function(){
+  setTimeout(function(){
     clearInterval(intervalId);
     $('#reelImage0').attr('src', 'images/slots.png');
   }, 1000);
@@ -143,30 +151,29 @@ function renderLose(){
   },3000);
 }
 
-//CONTROLLER
+//EVENTS
 $('.buttons').on('click', function(){
   if (bank > 0){
     // generate symbols
     for (var i = 0; i < payline.length; i++) {
       payline[i] = distribution[Math.floor(Math.random() * distribution.length)];
     }
-    bet = this.id;
-    // set bet amount
     countSymbols();
+    // set bet amount
+    bet = this.id;
     switch(bet) {
       case 'bet1':
-        bank -= 1;
-        computePayout();
+        betAmt = 1;
         break;
       case 'bet2':
-        bank -= 2;
-        computePayout() * 2;
+        betAmt = 2;
         break;
       case 'bet3':
-        bank -= 3;
-        computePayout() * 3;
+        betAmt = 3;
         break;
     };
+    bank -= betAmt;
+    computePayout();
     spin();
     render();
   } else {
@@ -179,6 +186,8 @@ $('.buttons').on('click', function(){
       }, 3000);
   }
 })
+
+
 
 
 // });
