@@ -11,19 +11,19 @@ var symbols = [
   {
     name: 'Ghost',
     image: 'images/ghost.png',
-    pays: 100
+    pays: 50
   }, {
     name: 'Cherry',
     image: 'images/cherry.png',
-    pays: 50
+    pays: 35
   }, {
     name: 'Chart',
     image: 'images/chart-upward-trend.png',
-    pays: 30
+    pays: 20
   }, {
     name: 'Pineapple',
     image: 'images/pineapple.png',
-    pays: 20
+    pays: 18
   }, {
     name: 'Diamond',
     image: 'images/diamond-with-dot.png',
@@ -74,7 +74,7 @@ function computePayout() {
   var keys = Object.keys(symbolCounts);
   for (var i=0; i < keys.length; i++) {
     if (symbolCounts[keys[i]] === 2) {
-      payout = 2 * symbols[keys[i]].pays;
+      payout = symbols[keys[i]].pays;
       break;
     } else if (symbolCounts[keys[i]] === 3) {
       payout = 10 * symbols[keys[i]].pays;
@@ -124,35 +124,61 @@ function render() {
   },3000);
 };
 
+function renderLose(){
+    setTimeout(function(){
+    clearInterval(intervalId);
+    $('#reelImage0').attr('src', 'images/slots.png');
+  }, 1000);
+  setTimeout(function(){
+    clearInterval(intervalId2);
+    $('#reelImage1').attr('src', 'images/money.png');
+  }, 2000);
+  setTimeout(function(){
+    clearInterval(intervalId3);
+    $('#reelImage2').attr('src', 'images/cat.png');
+  }, 3000);
+  setTimeout(function(){
+    $('#payout').html(payout);
+    $('#bank').html(bank);
+  },3000);
+}
 
 //CONTROLLER
 $('.buttons').on('click', function(){
+  if (bank > 0){
     // generate symbols
-  for (var i = 0; i < payline.length; i++) {
-    payline[i] = distribution[Math.floor(Math.random() * distribution.length)];
+    for (var i = 0; i < payline.length; i++) {
+      payline[i] = distribution[Math.floor(Math.random() * distribution.length)];
+    }
+    bet = this.id;
+    // set bet amount
+    countSymbols();
+    switch(bet) {
+      case 'bet1':
+        bank -= 1;
+        computePayout();
+        break;
+      case 'bet2':
+        bank -= 2;
+        computePayout() * 2;
+        break;
+      case 'bet3':
+        bank -= 3;
+        computePayout() * 3;
+        break;
+    };
+    spin();
+    render();
+  } else {
+      spin();
+      renderLose();
+      setTimeout(function(){
+        $('.buttons').prop('disabled', true);
+        $('h1').css('visibility', 'visible');
+        $('#place-bet').css('visibility', 'hidden');
+      }, 3000);
   }
-  bet = this.id;
-  // set bet amount
-  countSymbols();
-  switch(bet) {
-    case 'bet1':
-      bank -= 1;
-      computePayout();
-      break;
-    case 'bet2':
-      bank -= 2;
-      computePayout() * 2;
-      break;
-    case 'bet3':
-      bank -= 3;
-      computePayout() * 3;
-      break;
-  };
-  spin();
-  render();
 })
-
-
 
 
 // });

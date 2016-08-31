@@ -141,7 +141,10 @@ main {
 
 .buttons:hover {
   height: 75px;
-  background: #3C8446;
+}
+
+.buttons:focus {
+  outline: 0;
 }
 
 #bet3 {
