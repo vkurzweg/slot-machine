@@ -77,8 +77,8 @@ function computePayout() {
       payout = symbols[keys[i]].pays * betAmt;
       break;
     } else if (symbolCounts[keys[i]] === 3) {
-      payout = 10 * symbols[keys[i]].pays * betAmt;
       renderWin();
+      payout = 10 * symbols[keys[i]].pays * betAmt;
       break;
     } else {
       payout = 0;

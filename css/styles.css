@@ -3,6 +3,11 @@ body {
   position: relative;
 }
 
+#main-container {
+  position: absolute;
+  margin: auto;
+}
+
 h1 {
   font-family: 'Great Vibes', cursive;
   font-size: 34px;
@@ -79,7 +84,7 @@ h1 {
 #container {
   width: 700px;
   height: 359px;
-  margin: 300px auto auto auto;
+  margin: 300px auto auto 270px;
 }
 
 main {
