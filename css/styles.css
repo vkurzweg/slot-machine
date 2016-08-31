@@ -160,6 +160,8 @@ main {
 
 .buttons:focus {
   outline: 0;
+  color: #FF1338;
+  font-size: 30px;
 }
 
 #bet3 {

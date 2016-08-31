@@ -124,6 +124,9 @@ function render() {
     $('#payout').html(payout);
     $('#bank').html(bank);
   },3000);
+  setTimeout(function(){
+    $('audio')
+  })
 };
 
 function renderWin(){
