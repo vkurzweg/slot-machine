@@ -16,7 +16,7 @@ var symbols = [
   }, {
     name: 'Cherry',
     image: 'images/cherry.png',
-    pays: 35
+    pays: 25
   }, {
     name: 'Chart',
     image: 'images/chart-upward-trend.png',
@@ -94,6 +94,7 @@ var intervalId
 var intervalId2
 var intervalId3
 var intervalId4
+var intervalId5
 
 function spin(){
   intervalId =  setInterval(function(){
@@ -105,6 +106,10 @@ function spin(){
   intervalId3 =  setInterval(function(){
       $('#reelImage2').attr('src', symbols[distribution[Math.floor(Math.random() * distribution.length)]].image);
     },100);
+  // intervalId5 = setInterval(function(){
+  //   var song = new Audio('audio/DinotopiaWavefile_1_.mp3');
+  //   song.play();
+  // });
 }
 
 function render() {
@@ -124,9 +129,9 @@ function render() {
     $('#payout').html(payout);
     $('#bank').html(bank);
   },3000);
-  setTimeout(function(){
-    $('audio')
-  })
+  // setTimeout(function(){
+  //   clearInterval(intervalId5);
+  // },3000);
 };
 
 function renderWin(){

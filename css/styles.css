@@ -1,6 +1,9 @@
+/*MAIN/CONTAINER
+*/
 body {
   font-family: 'Cormorant SC', serif;
   position: relative;
+  background: #F7F7EF;
 }
 
 #main-container {
@@ -8,15 +11,8 @@ body {
   margin: auto;
 }
 
-h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 34px;
-  position: relative;
-  top: 150px;
-  left: 75px;
-  visibility: hidden;
-}
-
+/*PAYOUT AND BANK DISPLAYS
+*/
 #display-payout {
   width: 200px;
   height: 100px;
@@ -87,10 +83,12 @@ h1 {
   margin: 300px auto auto 270px;
 }
 
+/*MAIN IMAGE AND REELS
+*/
 main {
   width: 700px;
   height: 359px;
-  background: url("../images/slot_machine2.jpg");
+  background: url("../images/slot_machine.jpg");
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
@@ -108,6 +106,31 @@ main {
   padding-top: 65px;
 }
 
+#reel1 {
+  margin-left: 95px;
+}
+
+#reel2 {
+  margin-left: 236px;
+}
+
+#reel3 {
+  margin-left: 375px;
+}
+
+/*'PLAY AGAIN' HEADER
+*/
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 34px;
+  position: relative;
+  top: 150px;
+  left: 75px;
+  visibility: hidden;
+}
+
+/*'WIN' ANIMATION
+*/
 .rotate {
     position: absolute;
     top: 50%;
@@ -123,18 +146,8 @@ main {
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
-#reel1 {
-  margin-left: 95px;
-}
-
-#reel2 {
-  margin-left: 236px;
-}
-
-#reel3 {
-  margin-left: 375px;
-}
-
+/*BUTTONS
+*/
 #place-bet {
   font-family: 'Great Vibes', cursive;
   font-size: 30px;
@@ -183,3 +196,12 @@ main {
   margin-top: -245px;
   margin-left: 420px;
 }
+
+/*MEDIA QUERIES
+*/
+/*@media (max-width: 600px) {
+  .buttons {
+    display: block;
+  }
+}
+*/
