@@ -212,6 +212,10 @@ h1 {
 }
 
 @media (max-width: 670px) {
+  #main-container {
+    margin: auto;
+  }
+
   main {
     position: absolute;
     width: 500px;
