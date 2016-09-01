@@ -2,42 +2,42 @@ var symbols = [
   {
     name: 'Ghost',
     image: 'images/ghost.png',
-    pays: 100
+    pays: 50
   }, {
     name: 'Cherry',
     image: 'images/cherry.png',
-    pays: 90
+    pays: 25
   }, {
     name: 'Chart',
     image: 'images/chart-upward-trend.png',
-    pays: 80
+    pays: 20
   }, {
     name: 'Pineapple',
     image: 'images/pineapple.png',
-    pays: 70
+    pays: 18
   }, {
     name: 'Diamond',
     image: 'images/diamond-with-dot.png',
-    pays: 60
+    pays: 15
   }, {
     name: 'Crab',
     image: 'images/crab.png',
-    pays: 50
+    pays: 13
   }, {
     name: 'Sunrise',
     image: 'images/sunrise.png',
-    pays: 40
+    pays: 10
   }, {
     name: 'Wave',
     image: 'images/water-wave.png',
-    pays: 30
+    pays: 6
   }, {
     name: 'Balloon',
     image: 'images/balloon.png',
-    pays: 20
+    pays: 4
   }, {
     name: 'Wavy',
     image: 'images/wavy-dash.png',
-    pays: 10
+    pays: 2
   }
 ];

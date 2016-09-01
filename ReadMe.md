@@ -1,6 +1,6 @@
-### Slot Machine
+### Welcome to Slot Machine
 
-Welcome to Slot Machine. Modeled after the casino classic, this game is played
+Modeled after the casino classic, this game is played
 by pressing a button to select a bet amount and 'spin' a display of symbols.
 Players are rewarded for two or three matching symbols on the payline. Rewards
 are calculated according to the bet amount and symbol value ('Ghost' being the greatest
@@ -12,9 +12,9 @@ https://vkurzweg.github.io/slot-machine/
 
 This game was built using HTML, CSS, and JavaScript.
 
-## Pseudocode
+### Pseudocode
 
-# Components
+#### Components
 
 3 'Reels'
   - Random Number Generator
@@ -29,7 +29,7 @@ Total Available Funds/Bank Display
 Bet Selector
 Cash Out/Reset Button (edit wireframes)
 
-# Model
+#### Model
 
 When a player selects a bet ($1 or $5?)
   Generate 3 random numbers
@@ -60,41 +60,25 @@ When a player selects a bet ($1 or $5?)
 If player's bank is 0 or negative,
   end game
 
-Pay Table
+Base Point Value
 
-3 Matching:
-              1     2     3
-ghost       3300   6600  99000 
-cherry      2000   4000   6000
-chart wut   1000   2000   3000
-pineapple    500   1000   1500
-diamond      250    500    750
-crab         100    200    300
-sunrise       80    160    240
-water wave    30     60     90
-balloon       15     30     45
-wavy dash      3      6      9
+ghost         50
+cherry        25
+chart wut     20
+pineapple     18
+diamond       15
+crab          13
+sunrise       10
+water wave     6
+balloon        4
+wavy dash      2
 
-2 Matching:
-              1     2     3
-ghost        100    200    300 
-cherry        50    100    150
-chart wut     25     50     75
-pineapple     10     20     30
-diamond        5     10     15
-crab           5     10     15
-sunrise        5     10     15
-water wave     1      2      3
-balloon        1      2      3
-wavy dash      1      2      3
+Payout Structure
 
-1:
-              1     2      3
-ghost          5     10     15 
-cherry         2      4      6
-chart wut      1      2      3
+2 Matching Symbols = 2 x Base Point Value
+3 Matching Symbols = 3 x Base Point Value
 
-# View
+#### View
 
 Bind numbers/payouts with three identical sets of images
 
