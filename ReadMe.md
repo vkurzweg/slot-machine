@@ -1,16 +1,17 @@
 ### Welcome to Slot Machine
 
-Modeled after the casino classic, this game is played
-by pressing a button to select a bet amount and 'spin' a display of symbols.
-Players are rewarded for two or three matching symbols on the payline. Rewards
-are calculated according to the bet amount and symbol value ('Ghost' being the greatest
-value and 'Wavy Dash' being the least).
-
 Click here to play:
 
 https://vkurzweg.github.io/slot-machine/
 
-This game was built using HTML, CSS, and JavaScript.
+Modeled after the casino classic, this game is played
+by pressing a button to select a bet amount and 'spin' a display of symbols.
+Players are rewarded for two or three matching symbols on the payline. Payouts
+are calculated according to the bet amount (1x payout for $1 bet, 2x payout for $2, etc) 
+and symbol value ('Ghost' being the greatest value and 'Wavy Dash' being the least).
+
+This game was built using HTML, CSS, and JavaScript. Next steps include adaptation
+for mobile and tablet screens.
 
 ### Pseudocode
 
@@ -20,7 +21,7 @@ This game was built using HTML, CSS, and JavaScript.
   - Random Number Generator
   - 10 images per reel
   - Corresponding numbers for each image
-  - Payout Table
+  - Payout Structure
   - Reset Button
 Payline
 'Spin' Button
