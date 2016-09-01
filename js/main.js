@@ -1,5 +1,3 @@
-// $(function(){
-
 //DATA MODEL
 var payline = [null, null, null];
 var bank = 20;
@@ -49,7 +47,6 @@ var intervalId
 var intervalId2
 var intervalId3
 var intervalId4
-var intervalId5
 
 function spin() {
   //'FLASHING' SYMBOLS
@@ -62,14 +59,10 @@ function spin() {
   intervalId3 =  setInterval(function() {
       $('#reelImage2').attr('src', symbols[distribution[Math.floor(Math.random() * distribution.length)]].image);
     },100);
-  intervalId5 = setInterval(function() {
-    var song = new Audio('audio/slot_sound.mp3');
-    song.play();
-  });
 }
 
 function render() {
-  //STAGGER PAYLINE SYMBOLS
+  //STAGGER PAYLINE DISPLAY
   setTimeout(function() {
     clearInterval(intervalId);
     $('#reelImage0').attr('src', symbols[payline[0]].image);
@@ -86,19 +79,27 @@ function render() {
     $('#payout').html(payout);
     $('#bank').html(bank);
   },3000);
-  setTimeout(function() {
-    clearInterval(intervalId5);
-  },3000);
 };
+
+//SPIN AUDIO
+$('.buttons').on('click', function() {
+  var song = new Audio('audio/slot_sound.mp3');
+    song.play();
+  setTimeout(function() {
+    song.pause();
+  },4000)
+})
 
 //WIN ANIMATION
 function renderWin() {
   setTimeout(function() {
     $('img').addClass('rotate');
-  },3000)
+  },2500)
+  var song = new Audio('audio/WinSEq.WAV');
+    song.play();
 }
 
-//OUT OF MONEY SCREEN
+//LOSE GAME
 function renderLose() {
   setTimeout(function() {
     clearInterval(intervalId);
@@ -118,7 +119,7 @@ function renderLose() {
   },3000);
 }
 
-//EVENTS
+//CONTROLLER - BET AMOUNT
 $('.buttons').on('click', function() {
   if (bank > 0) {
     // generate symbols
@@ -156,7 +157,3 @@ $('.buttons').on('click', function() {
   }
 })
 
-
-
-
-// });
