@@ -52,7 +52,7 @@ var symbols = [
   }
 ];
 
-var distribution = [0,0,0,1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,6,6,6,6,6,6,6,6,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9];
+var distribution = [0,0,0,1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,5,6,6,6,6,6,6,6,6,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9];
 
 //CHECK FOR MATCHING SYMBOLS
 function countSymbols() {
@@ -97,6 +97,7 @@ var intervalId4
 var intervalId5
 
 function spin(){
+  //'FLASHING' SYMBOLS
   intervalId =  setInterval(function(){
       $('#reelImage0').attr('src', symbols[distribution[Math.floor(Math.random() * distribution.length)]].image);
     },100);
@@ -113,6 +114,7 @@ function spin(){
 }
 
 function render() {
+  //STAGGER PAYLINE SYMBOLS
   setTimeout(function(){
     clearInterval(intervalId);
     $('#reelImage0').attr('src', symbols[payline[0]].image);
@@ -134,12 +136,14 @@ function render() {
   // },3000);
 };
 
+//WIN ANIMATION
 function renderWin(){
   setTimeout(function(){
     $('img').addClass('rotate');
   },3000)
 }
 
+//OUT OF MONEY SCREEN
 function renderLose(){
   setTimeout(function(){
     clearInterval(intervalId);
