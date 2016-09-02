@@ -83,7 +83,7 @@ function render() {
 
 //SPIN AUDIO
 $('.buttons').on('click', function() {
-  var song = new Audio('audio/slot_sound.mp3');
+  var song = new Audio('audio/click_seq.mp3');
     song.play();
   setTimeout(function() {
     song.pause();
@@ -94,7 +94,7 @@ $('.buttons').on('click', function() {
 function renderWin() {
   setTimeout(function() {
     $('img').addClass('rotate');
-  },2500)
+  },2000)
   var song = new Audio('audio/WinSEq.WAV');
     song.play();
 }
