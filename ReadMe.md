@@ -1,6 +1,6 @@
 ### Welcome to Slot Machine
 
-Click here to play:
+Play:
 
 https://vkurzweg.github.io/slot-machine/
 
